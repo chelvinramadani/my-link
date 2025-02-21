@@ -10,6 +10,12 @@
 </head>
 
 <body>
+    <div class="toggle-container">
+        <button id="toggle-mode">
+            🌙 Mode Gelap
+        </button>
+    </div>
+
     <div class="container">
         <div class="profile">
             <img src="profil.png" alt="Foto Profil" class="profile-img">
@@ -17,19 +23,43 @@
             <p>Mahasiswa | Content Creator</p>
         </div>
         <div class="links">
-            <a href="https://www.instagram.com/chelvin_ramadani/" class="card"><i class="fab fa-instagram"></i>
-                Instagram</a>
-            <a href="https://www.twitter.com/yuliantochelvin/" class="card"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="https://www.instagram.com/chelvin_ramadani/" class="card"><i class="fab fa-instagram"></i>Instagram</a>
+            <a href="https://www.twitter.com/yuliantochelvin/" class="card"><i class="fab fa-twitter"></i>Twitter</a>
             <a href="https://www.linkedin.com/in/chelvin-ramadani-yulianto-3ab462286/" class="card"><i
-                    class="fab fa-linkedin"></i> LinkedIn</a>
+                    class="fab fa-linkedin"></i>LinkedIn</a>
             <a href="https://www.youtube.com/channel/UC4UYtL_olgSeOM7VOsoMl3g" class="card"><i
-                    class="fab fa-youtube"></i> YouTube</a>
-            <a href="https://www.github.com/chelvinramadani/" class="card"><i class="fab fa-github"></i> Github</a>
-            <a href="https://chelvinramadani.github.io/portofolio-website/" class="card"><i class="fa-solid fa-file"></i>
-                Portofolio</a>
-            <a href="https://www.youtube.com/playlist?list=PLTTaJky7IFCO2-59xvpuwA6Q-x9ibTUVQ" class="card"> Buat Website linktree Sederhana</a>
+                    class="fab fa-youtube"></i>YouTube</a>
+            <a href="https://www.github.com/chelvinramadani/" class="card"><i class="fab fa-github"></i>Github</a>
+            <a href="https://chelvinramadani.github.io/portofolio-website/" class="card"><i class="fa-solid fa-file"></i>Portofolio</a>
+            <a href="https://www.youtube.com/playlist?list=PLTTaJky7IFCO2-59xvpuwA6Q-x9ibTUVQ" class="card">Buat Website linktree Sederhana</a>
         </div>
     </div>
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("toggle-mode");
+    const body = document.body;
 
+    // Cek apakah pengguna sudah menyimpan mode sebelumnya
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+        toggleButton.innerHTML = "☀️ Mode Terang";
+    }
+
+    // Fungsi untuk mengganti mode
+    toggleButton.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+
+        if (body.classList.contains("dark-mode")) {
+            toggleButton.innerHTML = "☀️ Mode Terang";
+            localStorage.setItem("theme", "dark");
+        } else {
+            toggleButton.innerHTML = "🌙 Mode Gelap";
+            localStorage.setItem("theme", "light");
+        }
+    });
+});
+
+
+</script>
 </html>

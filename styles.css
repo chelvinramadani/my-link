@@ -1,134 +1,205 @@
-/* Keyframes untuk Animasi */
-@keyframes fadeIn {
+/* Animasi Fade-In dengan Slide-Up */
+@keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(15px); /* Dikurangi dari 20px */
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* Default Light Mode */
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
     margin: 0;
     background-color: #f5f5f5;
     color: #000;
-    padding: 10px;
-    animation: fadeIn 1s ease-in-out;
+    padding: 15px; /* Dikurangi dari 20px */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Kontainer Utama */
+/* Container */
 .container {
     text-align: center;
-    background: #ffffff;
-    padding: 20px;
-    border: 3px solid #000;
-    border-radius: 6px;
-    box-shadow: 4px 4px 0px #000;
-    width: 85%;
-    max-width: 350px;
-    margin: 10px 0;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-in-out forwards;
+    background: #fff;
+    padding: 20px; /* Dikurangi dari 25px */
+    border: 3px solid #000; /* Dikurangi dari 4px */
+    border-radius: 6px; /* Dikurangi dari 8px */
+    box-shadow: 4px 4px 0px #000; /* Dikurangi dari 6px */
+    width: 90%;
+    max-width: 350px; /* Dikurangi dari 400px */
+    margin: 15px 0; /* Dikurangi dari 20px */
+    transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Gambar Profil */
+/* Profile Image */
 .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 90px; /* Dikurangi dari 110px */
+    height: 90px; /* Dikurangi dari 110px */
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 4px; /* Dikurangi dari 5px */
     object-fit: cover;
-    border: 3px solid #008cff;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-in-out 0.2s forwards;
+    border: 2px solid #008cff; /* Dikurangi dari 3px */
 }
 
-/* Judul */
+/* Header & Paragraph */
 h1 {
-    margin: 8px 0;
-    font-size: 1.3em;
+    font-size: 1.3em; /* Dikurangi dari 1.5em */
     font-weight: bold;
     text-transform: uppercase;
-    color: #000;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-in-out 0.4s forwards;
 }
 
-/* Deskripsi */
 p {
-    margin: 0 0 15px;
-    font-size: 0.9em;
-    color: #444;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-in-out 0.6s forwards;
+    font-size: 0.9em; /* Dikurangi dari 1em */
+    color: #555;
 }
 
-/* Tautan */
+/* Links */
 .links {
-    margin-top: 15px;
+    margin-top: 12px; /* Dikurangi dari 15px */
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    opacity: 0;
-    animation: fadeIn 0.8s ease-in-out 0.8s forwards;
+    gap: 10px; /* Dikurangi dari 12px */
 }
 
 .card {
     display: block;
-    padding: 8px;
+    padding: 8px; /* Dikurangi dari 10px */
     background: #008cff;
     color: #ffffff;
     text-decoration: none;
-    border: 2px solid #000;
-    border-radius: 4px;
-    box-shadow: 3px 3px 0px #000;
-    font-size: 0.85em;
+    border: 2px solid #000; /* Dikurangi dari 3px */
+    border-radius: 40px; /* Dikurangi dari 50px */
+    box-shadow: 3px 3px 0px #00000077; /* Dikurangi dari 4px */
+    font-size: 0.8em; /* Dikurangi dari 0.9em */
     font-weight: bold;
+    text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     opacity: 0;
-    animation: fadeIn 0.8s ease-in-out 1s forwards;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Tambahkan delay agar muncul satu per satu */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+.card:nth-child(7) { animation-delay: 0.7s; }
+
+/* Hover Effect */
+.card:hover {
+    transform: translate(-2px, -2px); /* Dikurangi dari -3px */
+    box-shadow: 4px 4px 0px #000; /* Dikurangi dari 6px */
 }
 
 .card i {
-    margin-right: 6px;
+    margin-right: 5px; /* Dikurangi dari 6px */
 }
 
-.card:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 5px 5px 0px #000;
-    background: #005bbb;
+/* Toggle Button */
+.toggle-container {
+    position: absolute;
+    top: 8px; /* Dikurangi dari 10px */
+    right: 8px; /* Dikurangi dari 10px */
 }
 
-/* Responsive Design */
+#toggle-mode {
+    padding: 8px 15px; /* Dikurangi dari 10px 18px */
+    font-size: 12px; /* Dikurangi dari 14px */
+    font-weight: bold;
+    border: none;
+    background: linear-gradient(135deg, #000000, #444444);
+    color: #fff;
+    border-radius: 6px; /* Dikurangi dari 8px */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 0px #000; /* Dikurangi dari 4px */
+}
+
+#toggle-mode:hover {
+    background: linear-gradient(135deg, #222222, #666666);
+    box-shadow: 4px 4px 0px #000; /* Dikurangi dari 6px */
+}
+
+/* ======= DARK MODE ======= */
+.dark-mode {
+    background: linear-gradient(135deg, #121212, #1e1e1e);
+    color: #ffffff;
+}
+
+.dark-mode .profile-img {
+    width: 90px; /* Dikurangi dari 110px */
+    height: 90px; /* Dikurangi dari 110px */
+    border-radius: 50%;
+    margin-bottom: 4px; /* Dikurangi dari 5px */
+    object-fit: cover;
+    border: 2px solid #ffffff; /* Dikurangi dari 3px */
+}
+
+/* Dark Mode Container */
+.dark-mode .container {
+    background: rgba(20, 20, 20, 0.9);
+    border: 3px solid rgba(255, 255, 255, 0.6); /* Dikurangi dari 4px */
+    box-shadow: 0px 0px 12px rgba(0, 255, 255, 0.5); /* Dikurangi dari 15px */
+}
+
+/* Dark Mode Text */
+.dark-mode p {
+    color: #cccccc;
+}
+
+/* Dark Mode Card */
+.dark-mode .card {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    border: 2px solid #ffffff; /* Dikurangi dari 3px */
+    border-radius: 40px; /* Dikurangi dari 50px */
+    box-shadow: 2px 2px 0px #d8d8d8; /* Dikurangi dari 3px */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dark-mode .card:hover {
+    transform: scale(1.03); /* Dikurangi dari 1.05 */
+    box-shadow: 4px 4px 0px #d8d8d8; /* Dikurangi dari 6px */
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode #toggle-mode {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: #000;
+    box-shadow: 0px 0px 8px rgba(255, 87, 34, 0.8); /* Dikurangi dari 10px */
+}
+
+.dark-mode #toggle-mode:hover {
+    background: linear-gradient(135deg, #ff5722, #ff9800);
+    box-shadow: 0px 0px 12px rgba(255, 87, 34, 1); /* Dikurangi dari 15px */
+}
+
+/* Responsive */
 @media (max-width: 600px) {
     .container {
-        padding: 15px;
-        margin: 5px;
+        padding: 12px; /* Dikurangi dari 15px */
+        margin: 0 15px; /* Dikurangi dari 20px */
     }
 
     h1 {
-        font-size: 1.2em;
+        font-size: 1.1em; /* Dikurangi dari 1.2em */
     }
 
     p {
-        font-size: 0.8em;
+        font-size: 0.85em; /* Dikurangi dari 0.9em */
     }
 
     .card {
-        font-size: 0.8em;
-        padding: 6px;
-    }
-
-    .profile-img {
-        width: 70px;
-        height: 70px;
+        font-size: 0.75em; /* Dikurangi dari 0.85em */
+        padding: 8px; /* Dikurangi dari 10px */
     }
 }
